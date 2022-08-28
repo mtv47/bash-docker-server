@@ -6,6 +6,16 @@ PATH_TO_SERVER_MEDIA = $HOME/truenas/truenas/Public/Torrent
 
 PATH_TO_JELLYFIN = $HOME/truenas/jellyfin
 
+#Installing Watchtower
+sudo docker run -d \
+ --name watchtower \
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ containrrr/watchtower:latest \
+ --run-once \
+ --cleanup \
+ --include-restarting \
+ --include-stopped
+
 #Installing portainer
 cd $PATH_TO_SCRIPTS
 mkdir $PATH_TO_SERVER_DATA/portainer_data
