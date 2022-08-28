@@ -1,6 +1,4 @@
-#bash-debian-server
-
-Script by mtv47 to set up a debian server with docker"
+Script by mtv47 to set up a debian server with docker
 
 ## Usage
 
