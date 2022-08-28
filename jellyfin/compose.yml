@@ -1,0 +1,20 @@
+version: "2.1"
+services:
+  jellyfin:
+    image: linuxserver/jellyfin:latest
+    container_name: jellyfin
+    restart: "unless-stopped"
+    networks:
+      - nginxproxymanager_default
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      -${PATH_TO_JELLYFIN}/jellyfin_config:/config
+      -${PATH_TO_JELLYFIN}/jellyfin_cache:/cache
+      -${PATH_TO_SERVER_MEDIA}/Shows:/data/tvshows
+      -${PATH_TO_SERVER_MEDIA}/Movies:/data/movies
+      -${PATH_TO_SERVER_MEDIA}/Porn:/data/porn
+      -${PATH_TO_SERVER_MEDIA}/Temp:/data/temp
+      -${PATH_TO_SERVER_MEDIA}/Media:/data/media
