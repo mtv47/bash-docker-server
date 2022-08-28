@@ -3,7 +3,7 @@ Script by mtv47 to set up a debian server with docker
 ## Usage
 
 ```
-wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/init.sh -O init.sh && bash init.sh
+wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/bootstrap.sh -O bootstrap.sh && bash bootstrap.sh
 ```
 
 ## Features
