@@ -22,11 +22,14 @@ options=("Installs for Docker" "Installs for Docker Containers")
 select opt in "${options[@]}"
 do
     case $opt in
+        "Basic Setup")
+            sudo bash basic.sh
+            ;;
         "Installs for Docker")
-            sudo bash install-c.sh
+            sudo bash docker.sh
             ;;
         "Installs for Docker Containers")
-            sudo bash install-miniconda.sh
+            sudo bash containers.sh
             ;;
         "Quit")
             break
