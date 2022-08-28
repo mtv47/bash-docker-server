@@ -1,11 +1,5 @@
 #!/bin/bash
 
-PATH_TO_SCRIPTS = "$HOME/bash-debian-server"
-PATH_TO_SERVER_DATA = $HOME/truenas/Config/server_data
-PATH_TO_SERVER_MEDIA = $HOME/truenas/truenas/Public/Torrent
-
-PATH_TO_JELLYFIN = $HOME/truenas/jellyfin
-
 #Installing Watchtower
 sudo docker run -d \
  --name watchtower \
