@@ -101,6 +101,3 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
 echo "================================================================================"
 echo "List all docker running containers"
 sudo docker ps
-
-
-
