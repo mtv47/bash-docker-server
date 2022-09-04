@@ -39,7 +39,7 @@ echo "==========================================================================
 echo "Installing Code-Server"
 cd $PATH_TO_SCRIPTS
 cd $PATH_TO_SCRIPTS/code-server
-#Ask user for a password
+echo "================================================================================"
 echo "Please enter a password for code-server"
 read -s VSCODE_PASSWORD
 sudo USED_DOCKER_DATA=$DOCKER_DATA USED_VSCODE_PASSWORD=$VSCODE_PASSWORD docker-compose up -d
@@ -48,7 +48,7 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_VSCODE_PASSWORD=$VSCODE_PASSWORD docker-
 echo "================================================================================"
 echo "Installing Gitea"
 cd $PATH_TO_SCRIPTS/gitea
-#Ask user for a path to data
+echo "================================================================================"
 echo "Please enter a path to data for Gitea"
 read GITEA_DATA
 sudo USED_DOCKER_DATA=$DOCKER_DATA USED_GITEA_DATA=$GITEA_DATA docker-compose up -d
@@ -57,8 +57,10 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_GITEA_DATA=$GITEA_DATA docker-compose up
 echo "================================================================================"
 echo "Installing Jellyfin, Deluge, Sonarr, Jacket and Radarr (all in one)"
 cd $PATH_TO_SCRIPTS/media-services
+echo "================================================================================"
 echo "Please enter the path to your downloads"
 read DOWNLOADS_PATH
+echo "================================================================================"
 echo "Please enter the path to your media"
 read MEDIA_PATH
 sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOWNLOADS_PATH=$DOWNLOADS_PATH USED_MEDIA_PATH=$MEDIA_PATH docker-compose up -d
@@ -67,8 +69,10 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOWNLOADS_PATH=$DOWNLOADS_PATH USED_MEDI
 echo "================================================================================"
 echo "Installing Lidarr-on-steroids"
 cd $PATH_TO_SCRIPTS/lidarr-on-steroids
+echo "================================================================================"
 ehco "Please enter the path to your music"
 read MUSIC_PATH
+echo "================================================================================"
 echo "Please enter the path to your downloads"
 read DOWNLOADS_PATH
 sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH USED_DOWNLOADS_PATH=$DOWNLOADS_PATH docker-compose up -d
@@ -77,7 +81,7 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH USED_DOWNLOADS_PA
 echo "================================================================================"
 echo "Installing Navidrome"
 cd $PATH_TO_SCRIPTS/navidrome
-#Ask for the path of the music
+echo "================================================================================"
 echo "Please enter the path to your music"
 read MUSIC_PATH
 sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH docker-compose up -d
@@ -86,7 +90,7 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH docker-compose up
 echo "================================================================================"
 echo "Installing Papermerge"
 cd $PATH_TO_SCRIPTS/papermerge
-#Ask for the path of the documents$
+echo "================================================================================"
 echo "Please enter the path to your documents"
 read DOCUMENTS_PATH
 sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOCUMENTS_PATH=$DOCUMENTS_PATH docker-compose up -d
