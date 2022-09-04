@@ -20,13 +20,10 @@ wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/bootstrap.s
 * Code-Server
 * Deluge
 * File-Manager
-* Firefox
 * Homer
 * Jellyfin
 * Navidrome
-* Pihole
 * Portainer
-* qBittorrent
 * Watchtower
 
 
