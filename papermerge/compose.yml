@@ -11,5 +11,5 @@ services:
       - ${USED_DOCKER_DATA}/papermerge/config>:/config
       - ${USED_DOCUMENTS_PATH}:/data
     networks:
-      - nginx_default
+      - nginx_default # Port 8000 (web)
     restart: unless-stopped

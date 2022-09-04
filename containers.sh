@@ -65,6 +65,16 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOWNLOADS_PATH=$DOWNLOADS_PATH USED_MEDI
 
 
 echo "================================================================================"
+echo "Installing Lidarr-on-steroids"
+cd $PATH_TO_SCRIPTS/lidarr-on-steroids
+ehco "Please enter the path to your music"
+read MUSIC_PATH
+echo "Please enter the path to your downloads"
+read DOWNLOADS_PATH
+sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH USED_DOWNLOADS_PATH=$DOWNLOADS_PATH docker-compose up -d
+
+
+echo "================================================================================"
 echo "Installing Navidrome"
 cd $PATH_TO_SCRIPTS/navidrome
 #Ask for the path of the music

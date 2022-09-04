@@ -10,5 +10,5 @@ services:
     volumes:
       - ${USED_DOCKER_DATA}/freshrss:/config
     networks:
-      - nginx_default
+      - nginx_default # port 80 web gui
     restart: unless-stopped

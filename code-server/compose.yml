@@ -10,7 +10,7 @@ services:
       - PASSWORD=${USED_VSCODE_PASSWORD}
       - SUDO_PASSWORD=${USED_VSCODE_PASSWORD}
     volumes:
-      - ${USED_DOCKER_DATA}/code-server_config:/config
+      - ${USED_DOCKER_DATA}/code-server/config:/config
     networks:
-      - nginx_default
+      - nginx_default # port 8443 web gui
     restart: unless-stopped

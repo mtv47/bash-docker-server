@@ -37,11 +37,15 @@ sudo ufw default allow outgoing
 sudo ufw default deny incoming
 echo "================================================================================"
 echo "Allowing port"
-sudo ufw allow ssh
-sudo ufw allow 9443
-sudo ufw allow 80
-sudo ufw allow 81
-sudo ufw allow 443
+sudo ufw allow ssh  # Allow SSH
+sudo ufw allow 9443 # Port for Portainer
+sudo ufw allow 80  # Port for Nginx (HTTP)
+sudo ufw allow 81  # Port for Nginx (ADMIN WEB)
+sudo ufw allow 443 # Port for Nginx (HTTPS)
+sudo ufw allow 222 # Port for ssh gitea
+sudo ufw allow 6881 # Port for Deluge Torrent
+sudo ufw allow 6881/udp # Port for Deluge Torrent
+
 echo "================================================================================"
 echo "Enabling UFW"
 sudo ufw enable

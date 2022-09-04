@@ -9,4 +9,4 @@ services:
       - "${USED_DOCKER_DATA}/navidrome_data:/data"
       - "${USED_MUSIC_PATH}:/music:ro"
     networks:
-      - nginx_default
+      - nginx_default # Port 4533 (web)

@@ -9,7 +9,9 @@ services:
       - USER_GID=1000
     restart: always
     networks:
-      - nginx_default
+      - nginx_default # port 3000 for web gui
+    ports:
+      - "222:22" # port 22 for ssh
     volumes:
       - ${USED_GITEA_DATA}:/data
       - /etc/timezone:/etc/timezone:ro

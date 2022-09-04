@@ -5,7 +5,7 @@ services:
     container_name: jellyfin
     restart: "unless-stopped"
     networks:
-      - nginx_default
+      - nginx_default # Port 8096 (web)
     environment:
       - PUID=1000
       - PGID=1000
@@ -31,7 +31,10 @@ services:
       - ${USED_DOCKER_DATA}/deluge/config:/config
       - ${USED_DOWNLOADS_PATH}:/downloads
     networks:
-      - nginx_default
+      - nginx_default # Port 8112 (web)
+    ports:
+      - 6881:6881 # Port 6881 (torrent)
+      - 6881:6881/udp # Port 6881 (torrent)
   
   jackett:
     image: lscr.io/linuxserver/jackett:latest
@@ -44,7 +47,7 @@ services:
     volumes:
       - ${USED_DOCKER_DATA}/jackett/config:/config
     networks:
-      - nginx_default
+      - nginx_default # Port 9117 (web)
 
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
@@ -59,7 +62,7 @@ services:
       - ${USED_DOWNLOADS_PATH}:/downloads
       - ${USED_MEDIA_PATH}/Shows::/tv
     networks:
-      - nginx_default
+      - nginx_default # Port 8989 (web)
 
   radarr:
     image: lscr.io/linuxserver/radarr:latest
@@ -74,4 +77,4 @@ services:
       - ${USED_DOWNLOADS_PATH}:/downloads
       - ${USED_MEDIA_PATH}/Movies:/movies
     networks:
-      - nginx_default
+      - nginx_default # Port 7878 (web)
