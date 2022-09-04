@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+      - PASSWORD=${USED_VSCODE_PASSWORD}
+      - SUDO_PASSWORD=${USED_VSCODE_PASSWORD}
+    volumes:
+      - ${USED_DOCKER_DATA}/code-server_config:/config
+    networks:
+      - nginx_default
+    restart: unless-stopped

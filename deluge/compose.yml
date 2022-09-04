@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      - ${USED_DOCKER_DATA}/deluge/config:/config
+      - ${USED_DOWNLOADS_PATH}:/downloads
+    networks:
+      - nginx_default
+    restart: unless-stopped

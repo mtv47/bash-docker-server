@@ -5,16 +5,16 @@ services:
     container_name: jellyfin
     restart: "unless-stopped"
     networks:
-      - nginxproxymanager_default
+      - nginx_default
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Zurich
     volumes:
-      -${PATH_TO_JELLYFIN}/jellyfin_config:/config
-      -${PATH_TO_JELLYFIN}/jellyfin_cache:/cache
-      -${PATH_TO_SERVER_MEDIA}/Shows:/data/tvshows
-      -${PATH_TO_SERVER_MEDIA}/Movies:/data/movies
-      -${PATH_TO_SERVER_MEDIA}/Porn:/data/porn
-      -${PATH_TO_SERVER_MEDIA}/Temp:/data/temp
-      -${PATH_TO_SERVER_MEDIA}/Media:/data/media
+      -${USED_DOCKER_DATA}/jellyfin/jellyfin_config:/config
+      -${USED_DOCKER_DATA}/jellyfin/jellyfin_cache:/cache
+      -${USED_MEDIA_PATH}/Shows:/data/tvshows
+      -${USED_MEDIA_PATH}/Movies:/data/movies
+      -${USED_MEDIA_PATH}/Porn:/data/porn
+      -${USED_MEDIA_PATH}/Temp:/data/temp
+      -${USED_MEDIA_PATH}/Media:/data/media

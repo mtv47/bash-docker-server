@@ -8,5 +8,5 @@ services:
       - '81:81'
       - '443:443'
     volumes:
-      - /home/mt/nginx/data:/data
-      - /home/mt/nginx/letsencrypt:/etc/letsencrypt
+      - ${USED_DOCKER_DATA}/nginx/data:/data
+      - ${USED_DOCKER_DATA}/nginx/letsencrypt:/etc/letsencrypt
