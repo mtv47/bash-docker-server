@@ -30,12 +30,6 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
 
 
 echo "================================================================================"
-echo "Install Homarr"
-cd $PATH_TO_SCRIPTS/homarr
-sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
-
-
-echo "================================================================================"
 echo "Installing Code-Server"
 cd $PATH_TO_SCRIPTS
 cd $PATH_TO_SCRIPTS/code-server
