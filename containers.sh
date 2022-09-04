@@ -58,6 +58,15 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOWNLOADS_PATH=$DOWNLOADS_PATH docker-co
 
 
 echo "================================================================================"
+echo "Installing Navidrome"
+cd $PATH_TO_SCRIPTS/navidrome
+#Ask for the path of the music
+echo "Please enter the path to your music"
+read MUSIC_PATH
+sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH docker-compose up -d
+
+
+echo "================================================================================"
 echo "Installing File-Manager"
 sudo docker run -d \
   --name=file-manager \
@@ -77,36 +86,6 @@ sudo docker run -d \
   -v /home/mt/truenas/Config/server_assets/homer_assets:/www/assets \
   --restart=always \
   b4bz/homer:latest
-
-
-echo "================================================================================"
-echo "Installing Jellyfin"
-sudo docker run -d \
- --name jellyfin \
- --user 1000:1000 \
- --network=nginxproxymanager_default \
- --volume /home/mt/jellyfin/jellyfin_config:/config \
- --volume /home/mt/jellyfin/jellyfin_cache:/cache \
- --mount type=bind,source=/home/mt/truenas/Public/Torrent/Shows,target=/tv \
- --mount type=bind,source=/home/mt/truenas/Public/Torrent/Movie,target=/movie \
- --mount type=bind,source=/home/mt/truenas/Public/Torrent/Porn,target=/porn \
- --mount type=bind,source=/home/mt/truenas/Public/Torrent/Temp,target=/temp \
- --mount type=bind,source=/home/mt/truenas/Public/Torrent/Media,target=/media \
- --restart=unless-stopped \
- jellyfin/jellyfin:latest
-
-
-echo "================================================================================"
-echo "Installing Navidrome"
-sudo docker run -d \
-   --name navidrome \
-   --network=nginxproxymanager_default \
-   --restart=unless-stopped \
-   --user $(id -u):$(id -g) \
-   -v /home/mt/truenas/Public/Torrent/Music:/music \
-   -v /home/mt/navidrome:/data \
-   -e ND_LOGLEVEL=info \
-   deluan/navidrome:latest
 
 
 echo "================================================================================"

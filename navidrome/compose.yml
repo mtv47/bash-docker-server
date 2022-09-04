@@ -1,0 +1,12 @@
+version: "3"
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    restart: unless-stopped
+    environment:
+      ND_LOGLEVEL: info
+    volumes:
+      - "${USED_DOCKER_DATA}/navidrome_data:/data"
+      - "${USED_MUSIC_PATH}:/music:ro"
+    networks:
+      - nginx_default
