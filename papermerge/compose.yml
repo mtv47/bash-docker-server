@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  papermerge:
+    image: lscr.io/linuxserver/papermerge:latest
+    container_name: papermerge
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      - ${USED_DOCKER_DATA}/papermerge/config>:/config
+      - ${USED_DOCUMENTS_PATH}:/data
+    networks:
+      - nginx_default
+    restart: unless-stopped

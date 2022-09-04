@@ -23,6 +23,7 @@ wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/bootstrap.s
 * Homarr
 * Jellyfin
 * Navidrome
+* Papermerge
 * Portainer
 * Watchtower
 
