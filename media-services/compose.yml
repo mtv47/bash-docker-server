@@ -19,6 +19,18 @@ services:
       -${USED_MEDIA_PATH}/Temp:/data/temp
       -${USED_MEDIA_PATH}/Media:/data/media
 
+  jellyseerr:
+       image: fallenbagel/jellyseerr:latest
+       container_name: jellyseerr
+       restart: unless-stopped
+       networks:
+            - nginx_default # Port 5055 (web)
+       environment:
+            - LOG_LEVEL=debug
+            - TZ=Europe/Zurich
+       volumes:
+            - ${USED_DOCKER_DATA}/jellyseerr/config:/app/config
+
   deluge:
     image: lscr.io/linuxserver/deluge:latest
     container_name: deluge

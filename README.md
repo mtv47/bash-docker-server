@@ -30,7 +30,10 @@ wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/bootstrap.s
 
 * Jellyfin
 * Deluge
-
+* Jackett
+* Radarr
+* Sonarr
+* Jellyseerr
 
 ## Requirements
 * Debian/Ubuntu Server 20.04 or 22.04
