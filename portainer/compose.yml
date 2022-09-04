@@ -9,6 +9,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ${PATH_TO_SERVER_DATA}/portainer-data:/data
+      - ${NOW_DOCKER_DATA}/portainer_data:/data
     ports:
       - 9443:9443

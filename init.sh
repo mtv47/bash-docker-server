@@ -16,20 +16,30 @@ echo ""
 echo "Script by mtv47 to set up a debian server with docker"
 echo ""
 
-echo "Please enter your choice: "
-options=("Installs for Docker" "Installs for Docker Containers")
+USER_HOME=$(eval echo ~${SUDO_USER})
+PATH_TO_SCRIPTS="$USER_HOME/bash-nuc"
+
+echo ""
+echo "This script will be working in"
+echo $USER_HOME
+echo ""
+
+options=("Basic Setup" "Installs for Docker" "Installs for Docker Containers" "Update" "Quit")
 
 select opt in "${options[@]}"
 do
     case $opt in
         "Basic Setup")
-            sudo bash basic.sh
+            bash basic.sh
             ;;
         "Installs for Docker")
-            sudo bash docker.sh
+            bash docker.sh
             ;;
         "Installs for Docker Containers")
-            sudo bash containers.sh
+            bash containers.sh
+            ;;
+        "Update")
+            bash update.sh
             ;;
         "Quit")
             break
