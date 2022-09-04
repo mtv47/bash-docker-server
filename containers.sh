@@ -91,6 +91,12 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOCUMENTS_PATH=$DOCUMENTS_PATH docker-co
 
 
 echo "================================================================================"
+echo "Installing FreshRss"
+cd $PATH_TO_SCRIPTS/freshrss
+sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
+
+
+echo "================================================================================"
 echo "List all docker running containers"
 sudo docker ps
 
