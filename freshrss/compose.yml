@@ -8,7 +8,7 @@ services:
       - PGID=1000
       - TZ=Europe/Zurich
     volumes:
-      - ${USED_DOCKER_DATA}/freshrss:/config
+      - ${USED_DOCKER_DATA}/freshrss/config:/config
     networks:
       - nginx_default # port 80 web gui
     restart: unless-stopped

@@ -11,8 +11,8 @@ services:
       - PGID=1000
       - TZ=Europe/Zurich
     volumes:
-      -${USED_DOCKER_DATA}/jellyfin/jellyfin_config:/config
-      -${USED_DOCKER_DATA}/jellyfin/jellyfin_cache:/cache
+      -${USED_DOCKER_DATA}/jellyfin/config:/config
+      -${USED_DOCKER_DATA}/jellyfin/cache:/cache
       -${USED_MEDIA_PATH}/Shows:/data/tvshows
       -${USED_MEDIA_PATH}/Movies:/data/movies
       -${USED_MEDIA_PATH}/Porn:/data/porn
@@ -60,7 +60,7 @@ services:
     volumes:
       - ${USED_DOCKER_DATA}/sonarr/config:/config
       - ${USED_DOWNLOADS_PATH}:/downloads
-      - ${USED_MEDIA_PATH}/Shows::/tv
+      - ${USED_MEDIA_PATH}/Shows:/tv
     networks:
       - nginx_default # Port 8989 (web)
 
