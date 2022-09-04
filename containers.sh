@@ -72,21 +72,9 @@ cd $PATH_TO_SCRIPTS/homarr
 sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
 
 
-
-
-echo "================================================================================"
-echo "Installing File-Manager"
-sudo docker run -d \
-  --name=file-manager \
-  --network=nginx_default \
-  -v /home/mt/truenas/Config/server_data/file-manager_data/database.db:/database.db \
-  -v /home/mt/truenas/:/srv \
-  --user 1000:1000 \
-  --restart unless-stopped \
-  filebrowser/filebrowser:latest
-
-
 echo "================================================================================"
 echo "List all docker running containers"
 sudo docker ps
+
+
 

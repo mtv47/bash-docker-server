@@ -19,7 +19,6 @@ wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/bootstrap.s
 ## Docker Containers
 * Code-Server
 * Deluge
-* File-Manager
 * Homarr
 * Jellyfin
 * Navidrome
