@@ -47,7 +47,6 @@ sudo docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
-  -e DELUGE_LOGLEVEL=error `#optional` \
   -v /home/mt/truenas/Config/server_config/deluge_config:/config \
   -v /home/mt/truenas/Public/Torrent/Temp/Downloading:/downloads \
   --restart unless-stopped \

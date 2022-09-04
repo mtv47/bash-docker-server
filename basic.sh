@@ -38,6 +38,10 @@ sudo ufw default deny incoming
 echo "================================================================================"
 echo "Allowing port"
 sudo ufw allow ssh
+sudo ufw allow 9443
+sudo ufw allow 80
+sudo ufw allow 81
+sudo ufw allow 443
 echo "================================================================================"
 echo "Enabling UFW"
 sudo ufw enable
