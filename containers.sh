@@ -40,6 +40,15 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_VSCODE_PASSWORD=$VSCODE_PASSWORD docker-
 
 
 echo "================================================================================"
+echo "Installing Gitea"
+cd $PATH_TO_SCRIPTS/gitea
+#Ask user for a path to data
+echo "Please enter a path to data for Gitea"
+read GITEA_DATA
+sudo USED_DOCKER_DATA=$DOCKER_DATA USED_GITEA_DATA=$GITEA_DATA docker-compose up -d
+
+
+echo "================================================================================"
 echo "Installing Jellyfin"
 cd $PATH_TO_SCRIPTS/jellyfin
 #Ask for the path of the media
