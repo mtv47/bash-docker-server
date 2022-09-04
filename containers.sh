@@ -67,6 +67,14 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH docker-compose up
 
 
 echo "================================================================================"
+echo "Install Homarr"
+cd $PATH_TO_SCRIPTS/homarr
+sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
+
+
+
+
+echo "================================================================================"
 echo "Installing File-Manager"
 sudo docker run -d \
   --name=file-manager \
@@ -76,16 +84,6 @@ sudo docker run -d \
   --user 1000:1000 \
   --restart unless-stopped \
   filebrowser/filebrowser:latest
-
-
-echo "================================================================================"
-echo "Installing Homer Docker"
-sudo docker run -d \
-  --name=homer \
-  --network=nginx_default \
-  -v /home/mt/truenas/Config/server_assets/homer_assets:/www/assets \
-  --restart=always \
-  b4bz/homer:latest
 
 
 echo "================================================================================"

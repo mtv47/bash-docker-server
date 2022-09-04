@@ -20,7 +20,7 @@ wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/bootstrap.s
 * Code-Server
 * Deluge
 * File-Manager
-* Homer
+* Homarr
 * Jellyfin
 * Navidrome
 * Portainer

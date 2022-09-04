@@ -1,0 +1,11 @@
+version: '3'
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - ${USED_DOCKER_DATA}/homarr/configs:/app/data/configs
+      - ${USED_DOCKER_DATA}/homarr/icons:/app/public/icons
+    networks:
+      - nginx_default
