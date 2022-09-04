@@ -17,16 +17,19 @@ wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/bootstrap.s
 * Fail2Ban
 
 ## Docker Containers
-* Code-Server
-* Gitea
-* Deluge
-* Homarr
-* Jellyfin
-* Navidrome
-* Papermerge
 * Portainer
 * Watchtower
+* Homarr
+
+* Code-Server
+* Gitea
+
+* Navidrome
+* Papermerge
 * FreshRSS
+
+* Jellyfin
+* Deluge
 
 
 ## Requirements

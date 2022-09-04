@@ -55,7 +55,7 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_GITEA_DATA=$GITEA_DATA docker-compose up
 
 
 echo "================================================================================"
-echo "Installing Media Services"
+echo "Installing Jellyfin, Deluge, Sonarr, Jacket and Radarr (all in one)"
 cd $PATH_TO_SCRIPTS/media-services
 echo "Please enter the path to your downloads"
 read DOWNLOADS_PATH
