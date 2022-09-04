@@ -1,0 +1,77 @@
+version: "2.1"
+services:
+  jellyfin:
+    image: linuxserver/jellyfin:latest
+    container_name: jellyfin
+    restart: "unless-stopped"
+    networks:
+      - nginx_default
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      -${USED_DOCKER_DATA}/jellyfin/jellyfin_config:/config
+      -${USED_DOCKER_DATA}/jellyfin/jellyfin_cache:/cache
+      -${USED_MEDIA_PATH}/Shows:/data/tvshows
+      -${USED_MEDIA_PATH}/Movies:/data/movies
+      -${USED_MEDIA_PATH}/Porn:/data/porn
+      -${USED_MEDIA_PATH}/Temp:/data/temp
+      -${USED_MEDIA_PATH}/Media:/data/media
+
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      - ${USED_DOCKER_DATA}/deluge/config:/config
+      - ${USED_DOWNLOADS_PATH}:/downloads
+    networks:
+      - nginx_default
+  
+  jackett:
+    image: lscr.io/linuxserver/jackett:latest
+    container_name: jackett
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      - ${USED_DOCKER_DATA}/jackett/config:/config
+    networks:
+      - nginx_default
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      - ${USED_DOCKER_DATA}/sonarr/config:/config
+      - ${USED_DOWNLOADS_PATH}:/downloads
+      - ${USED_MEDIA_PATH}/Shows::/tv
+    networks:
+      - nginx_default
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      - ${USED_DOCKER_DATA}/radarr/config:/config
+      - ${USED_DOWNLOADS_PATH}:/downloads
+      - ${USED_MEDIA_PATH}/Movies:/movies
+    networks:
+      - nginx_default

@@ -55,21 +55,13 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_GITEA_DATA=$GITEA_DATA docker-compose up
 
 
 echo "================================================================================"
-echo "Installing Deluge"
-cd $PATH_TO_SCRIPTS/deluge
-#Ask for the path of the downloads
+echo "Installing Media Services"
+cd $PATH_TO_SCRIPTS/media-services
 echo "Please enter the path to your downloads"
 read DOWNLOADS_PATH
-sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOWNLOADS_PATH=$DOWNLOADS_PATH docker-compose up -d
-
-
-echo "================================================================================"
-echo "Installing Jellyfin"
-cd $PATH_TO_SCRIPTS/jellyfin
-#Ask for the path of the media
 echo "Please enter the path to your media"
 read MEDIA_PATH
-sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MEDIA_PATH=$MEDIA_PATH docker-compose up -d
+sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOWNLOADS_PATH=$DOWNLOADS_PATH USED_MEDIA_PATH=$MEDIA_PATH docker-compose up -d
 
 
 echo "================================================================================"
