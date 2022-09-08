@@ -23,13 +23,12 @@ wget https://raw.githubusercontent.com/mtv47/bash-debian-server/main/bootstrap.s
 * Code-Server
 * Gitea
 
-* Navidrome
 * Papermerge
 * FreshRSS
 
 * Jellyfin
 * Deluge
-* Jackett
+* Prowlarr
 * Radarr
 * Sonarr
 * Jellyseerr
