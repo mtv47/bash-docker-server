@@ -71,7 +71,7 @@ echo "Please enter the path to your downloads"
 read DOWNLOADS_PATH
 sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH USED_DOWNLOADS_PATH=$DOWNLOADS_PATH docker-compose up -d
 
-
+:'
 echo "================================================================================"
 echo "Installing Navidrome"
 cd $PATH_TO_SCRIPTS/navidrome
@@ -79,7 +79,7 @@ echo "==========================================================================
 echo "Please enter the path to your music"
 read MUSIC_PATH
 sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH docker-compose up -d
-
+'
 
 echo "================================================================================"
 echo "Installing Papermerge"
