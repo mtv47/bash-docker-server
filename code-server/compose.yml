@@ -11,6 +11,8 @@ services:
       - SUDO_PASSWORD=${USED_VSCODE_PASSWORD}
     volumes:
       - ${USED_DOCKER_DATA}/code-server/config:/config
-    networks:
-      - nginx_default # port 8443 web gui
     restart: unless-stopped
+networks:
+  default:
+    name: nginx_default # Port 8443 (web)
+    external: true

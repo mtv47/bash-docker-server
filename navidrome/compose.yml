@@ -8,5 +8,7 @@ services:
     volumes:
       - "${USED_DOCKER_DATA}/navidrome/data:/data"
       - "${USED_MUSIC_PATH}:/music:ro"
-    networks:
-      - nginx_default # Port 4533 (web)
+networks:
+  default:
+    name: nginx_default   # Port 4533 (web)
+    external: true

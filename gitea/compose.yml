@@ -8,11 +8,13 @@ services:
       - USER_UID=1000
       - USER_GID=1000
     restart: always
-    networks:
-      - nginx_default # port 3000 for web gui
     ports:
-      - "222:22" # port 22 for ssh
+      - "222:22" # port 222 for ssh
     volumes:
       - ${USED_GITEA_DATA}:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+networks:
+  default:
+    name: nginx_default # Port 3000 (web)
+    external: true

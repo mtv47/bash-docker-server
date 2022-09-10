@@ -4,8 +4,7 @@ services:
     image: linuxserver/jellyfin:latest
     container_name: jellyfin
     restart: "unless-stopped"
-    networks:
-      - nginx_default # Port 8096 (web)
+    # Port 8096 (web)
     environment:
       - PUID=1000
       - PGID=1000
@@ -20,16 +19,15 @@ services:
       -${USED_MEDIA_PATH}/Media:/data/media
 
   jellyseerr:
-       image: fallenbagel/jellyseerr:latest
-       container_name: jellyseerr
-       restart: unless-stopped
-       networks:
-            - nginx_default # Port 5055 (web)
-       environment:
-            - LOG_LEVEL=debug
-            - TZ=Europe/Zurich
-       volumes:
-            - ${USED_DOCKER_DATA}/jellyseerr/config:/app/config
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    restart: unless-stopped
+    # Port 5055 (web)
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=Europe/Zurich
+    volumes:
+      - ${USED_DOCKER_DATA}/jellyseerr/config:/app/config
 
   deluge:
     image: lscr.io/linuxserver/deluge:latest
@@ -42,8 +40,7 @@ services:
     volumes:
       - ${USED_DOCKER_DATA}/deluge/config:/config
       - ${USED_DOWNLOADS_PATH}:/downloads
-    networks:
-      - nginx_default # Port 8112 (web)
+    # Port 8112 (web)
     ports:
       - 6881:6881 # Port 6881 (torrent)
       - 6881:6881/udp # Port 6881 (torrent)
@@ -58,8 +55,7 @@ services:
   #    - TZ=Europe/Zurich
   #  volumes:
   #    - ${USED_DOCKER_DATA}/jackett/config:/config
-  #  networks:
-  #    - nginx_default # Port 9117 (web)
+  #  # Port 9117 (web)
 
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:develop
@@ -71,8 +67,7 @@ services:
       - TZ=Europe/Zurich
     volumes:
       - ${USED_DOCKER_DATA}/prowlarr/config:/config
-    networks:
-      - nginx_default # Port 9696 (web)
+    # Port 9696 (web)
 
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
@@ -86,8 +81,7 @@ services:
       - ${USED_DOCKER_DATA}/sonarr/config:/config
       - ${USED_DOWNLOADS_PATH}:/downloads
       - ${USED_MEDIA_PATH}/Shows:/tv
-    networks:
-      - nginx_default # Port 8989 (web)
+    # Port 8989 (web)
 
   radarr:
     image: lscr.io/linuxserver/radarr:latest
@@ -101,5 +95,8 @@ services:
       - ${USED_DOCKER_DATA}/radarr/config:/config
       - ${USED_DOWNLOADS_PATH}:/downloads
       - ${USED_MEDIA_PATH}/Movies:/movies
-    networks:
-      - nginx_default # Port 7878 (web)
+    # Port 7878 (web)
+networks:
+  default:
+    name: nginx_default
+    external: true

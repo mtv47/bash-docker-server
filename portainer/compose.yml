@@ -10,5 +10,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ${USED_DOCKER_DATA}/portainer/data:/data
-    ports:
-      - 9443:9443 # Portainer Web UI
+networks:
+  default:
+    name: nginx_default # Port 9443
+    external: true

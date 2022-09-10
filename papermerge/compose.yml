@@ -10,6 +10,8 @@ services:
     volumes:
       - ${USED_DOCKER_DATA}/papermerge/config>:/config
       - ${USED_DOCUMENTS_PATH}:/data
-    networks:
-      - nginx_default # Port 8000 (web)
     restart: unless-stopped
+networks:
+  default:
+    name: nginx_default # Port 8000 (web)
+    external: true

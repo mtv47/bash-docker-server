@@ -9,6 +9,8 @@ services:
       - TZ=Europe/Zurich
     volumes:
       - ${USED_DOCKER_DATA}/freshrss/config:/config
-    networks:
-      - nginx_default # port 80 web gui
     restart: unless-stopped
+networks:
+  default:
+    name: nginx_default # Port 80 (web)
+    external: true
