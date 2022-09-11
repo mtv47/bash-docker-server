@@ -63,7 +63,7 @@ echo "==========================================================================
 echo "Installing Lidarr-on-steroids"
 cd $PATH_TO_SCRIPTS/lidarr-on-steroids
 echo "================================================================================"
-ehco "Please enter the path to your music"
+echo "Please enter the path to your music"
 read MUSIC_PATH
 echo "================================================================================"
 echo "Please enter the path to your downloads"
