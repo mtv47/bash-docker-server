@@ -10,13 +10,13 @@ services:
       - PGID=1000
       - TZ=Europe/Zurich
     volumes:
-      -${USED_DOCKER_DATA}/jellyfin/config:/config
-      -${USED_DOCKER_DATA}/jellyfin/cache:/cache
-      -${USED_MEDIA_PATH}/Shows:/data/tvshows
-      -${USED_MEDIA_PATH}/Movies:/data/movies
-      -${USED_MEDIA_PATH}/Porn:/data/porn
-      -${USED_MEDIA_PATH}/Temp:/data/temp
-      -${USED_MEDIA_PATH}/Media:/data/media
+      - ${USED_DOCKER_DATA}/jellyfin/config:/config
+      - ${USED_DOCKER_DATA}/jellyfin/cache:/cache
+      - ${USED_MEDIA_PATH}/Shows:/data/tvshows
+      - ${USED_MEDIA_PATH}/Movies:/data/movies
+      - ${USED_MEDIA_PATH}/Porn:/data/porn
+      - ${USED_MEDIA_PATH}/Temp:/data/temp
+      - ${USED_MEDIA_PATH}/Media:/data/media
 
   jellyseerr:
     image: fallenbagel/jellyseerr:latest
