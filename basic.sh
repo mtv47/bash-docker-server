@@ -38,7 +38,6 @@ sudo ufw default deny incoming
 echo "================================================================================"
 echo "Allowing port"
 sudo ufw allow ssh  # Allow SSH
-sudo ufw allow 9443 # Port for Portainer
 sudo ufw allow 80  # Port for Nginx (HTTP)
 sudo ufw allow 81  # Port for Nginx (ADMIN WEB)
 sudo ufw allow 443 # Port for Nginx (HTTPS)

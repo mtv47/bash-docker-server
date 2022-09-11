@@ -26,9 +26,9 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Clones the repository
-[ -d "$HOME/bash-debian-server" ] || git clone https://github.com/mtv47/bash-debian-server.git $HOME/bash-debian-server
+[ -d "$HOME/bash-docker-server" ] || git clone https://github.com/mtv47/bash-docker-server.git $HOME/bash-docker-server
 
-cd $HOME/bash-debian-server
+cd $HOME/bash-docker-server
 
 clear
 sudo bash init.sh

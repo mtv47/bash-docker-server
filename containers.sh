@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PATH_TO_SCRIPTS="$HOME/bash-debian-server"
+PATH_TO_SCRIPTS="$HOME/bash-docker-server"
 mkdir $HOME/docker_data
 DOCKER_DATA="$HOME/docker_data"
 
