@@ -31,7 +31,6 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
 
 echo "================================================================================"
 echo "Installing Code-Server"
-cd $PATH_TO_SCRIPTS
 cd $PATH_TO_SCRIPTS/code-server
 echo "================================================================================"
 echo "Please enter a password for code-server"
@@ -69,7 +68,7 @@ read MUSIC_PATH
 echo "================================================================================"
 echo "Please enter the path to your downloads"
 read DOWNLOADS_PATH
-sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH USED_DOWNLOADS_PATH=$DOWNLOADS_PATH docker-compose up -d
+sudo USED_DOCKER_DATA=$DOCKER_DATA =$MUSIC_PATH USED_DOWNLOADS_PATH=$DOWNLOADS_PATH docker-compose up -d
 
 :'
 echo "================================================================================"

@@ -39,7 +39,7 @@ services:
       - TZ=Europe/Zurich
     volumes:
       - ${USED_DOCKER_DATA}/deluge/config:/config
-      - ${USED_DOWNLOADS_PATH}:/downloads
+      - ${USED_DOWNLOADS_PATH}/Downloading:/downloads
     # Port 8112 (web)
     ports:
       - 6881:6881 # Port 6881 (torrent)
@@ -79,7 +79,7 @@ services:
       - TZ=Europe/Zurich
     volumes:
       - ${USED_DOCKER_DATA}/sonarr/config:/config
-      - ${USED_DOWNLOADS_PATH}:/downloads
+      - ${USED_DOWNLOADS_PATH}/Shows:/downloads
       - ${USED_MEDIA_PATH}/Shows:/tv
     # Port 8989 (web)
 
@@ -93,7 +93,7 @@ services:
       - TZ=Europe/Zurich
     volumes:
       - ${USED_DOCKER_DATA}/radarr/config:/config
-      - ${USED_DOWNLOADS_PATH}:/downloads
+      - ${USED_DOWNLOADS_PATH}/Movies:/downloads
       - ${USED_MEDIA_PATH}/Movies:/movies
     # Port 7878 (web)
 networks:
