@@ -18,14 +18,14 @@ sudo docker run -d \
 
 
 echo "================================================================================"
-echo "Installing Portainer"
-cd $PATH_TO_SCRIPTS/portainer
+echo "Installing Nginx"
+cd $PATH_TO_SCRIPTS/nginx
 sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
 
 
 echo "================================================================================"
-echo "Installing Nginx"
-cd $PATH_TO_SCRIPTS/nginx
+echo "Installing Portainer"
+cd $PATH_TO_SCRIPTS/portainer
 sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
 
 
