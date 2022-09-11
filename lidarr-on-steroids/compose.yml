@@ -7,7 +7,7 @@ services:
       - ${USED_DOCKER_DATA}/lidarr/config:/config
       - ${USED_DOCKER_DATA}/deemix/config:/config_deemix
       - ${USED_DOWNLOADS_PATH}/Music:/downloads
-      - ${USED_MUSIC_PATH}/:/music
+      - ${USED_MUSIC_PATH}:/music
 networks:
   default:
     name: nginx_default # Lidarr 8686 (web) and 6595 (web) Deeminx
