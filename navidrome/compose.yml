@@ -2,6 +2,7 @@ version: "3"
 services:
   navidrome:
     image: deluan/navidrome:latest
+    container_name: navidrome
     restart: unless-stopped
     environment:
       ND_LOGLEVEL: info
