@@ -8,8 +8,8 @@ services:
       - PGID=1000
       - TZ=Europe/Zurich
     volumes:
-      - ${USED_DOCKER_DATA}/papermerge/config>:/config
-      - ${USED_DOCUMENTS_PATH}:/data
+      - ${USED_DOCKER_DATA}/papermerge/config:/config
+      - ${USED_DOCKER_DATA}/papermerge/data:/data
     restart: unless-stopped
 networks:
   default:

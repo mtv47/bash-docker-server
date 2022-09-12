@@ -21,6 +21,8 @@ services:
       - db
   db:
     image: 'jc21/mariadb-aria:latest'
+    container_name: nginx_db_1
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: 'npm'
       MYSQL_DATABASE: 'npm'

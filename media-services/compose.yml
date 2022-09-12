@@ -16,18 +16,18 @@ services:
       - ${USED_MEDIA_PATH}/Movies:/data/movies
       - ${USED_MEDIA_PATH}/Porn:/data/porn
       - ${USED_MEDIA_PATH}/Temp:/data/temp
-      - ${USED_MEDIA_PATH}/Media:/data/media
+      - ${USED_MEDIA_PATH}/Music:/data/music
 
-  jellyseerr:
-    image: fallenbagel/jellyseerr:latest
-    container_name: jellyseerr
-    restart: unless-stopped
-    # Port 5055 (web)
-    environment:
-      - LOG_LEVEL=debug
-      - TZ=Europe/Zurich
-    volumes:
-      - ${USED_DOCKER_DATA}/jellyseerr/config:/app/config
+  #jellyseerr:
+  #  image: fallenbagel/jellyseerr:latest
+  #  container_name: jellyseerr
+  #  restart: unless-stopped
+  #  # Port 5055 (web)
+  #  environment:
+  #    - LOG_LEVEL=debug
+  #    - TZ=Europe/Zurich
+  #  volumes:
+  #    - ${USED_DOCKER_DATA}/jellyseerr/config:/app/config
 
   deluge:
     image: lscr.io/linuxserver/deluge:latest
@@ -79,7 +79,7 @@ services:
       - TZ=Europe/Zurich
     volumes:
       - ${USED_DOCKER_DATA}/sonarr/config:/config
-      - ${USED_DOWNLOADS_PATH}/Shows:/downloads
+      - ${USED_DOWNLOADS_PATH}/Downloading:/downloads
       - ${USED_MEDIA_PATH}/Shows:/tv
     # Port 8989 (web)
 
@@ -93,7 +93,7 @@ services:
       - TZ=Europe/Zurich
     volumes:
       - ${USED_DOCKER_DATA}/radarr/config:/config
-      - ${USED_DOWNLOADS_PATH}/Movies:/downloads
+      - ${USED_DOWNLOADS_PATH}/Downloading:/downloads
       - ${USED_MEDIA_PATH}/Movies:/movies
     # Port 7878 (web)
 networks:

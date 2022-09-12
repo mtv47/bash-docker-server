@@ -6,7 +6,7 @@ services:
     volumes:
       - ${USED_DOCKER_DATA}/lidarr/config:/config
       - ${USED_DOCKER_DATA}/deemix/config:/config_deemix
-      - ${USED_DOWNLOADS_PATH}/Music:/downloads
+      - ${USED_DOWNLOADS_PATH}/Downloading:/downloads
       - ${USED_MUSIC_PATH}:/music
 networks:
   default:
