@@ -17,7 +17,7 @@ if [[ "$os" == "ubuntu" && "$os_version" -lt 2004 ]]; then
   echo "Ubuntu 20.04 or higher is required to use this installer."
   echo "This version of Ubuntu is too old and unsupported."
   exit
-fi s
+fi      
 
 # Clones the repository
 [ -d "$HOME/bash-docker-server" ] || git clone https://github.com/mtv47/bash-docker-server.git $HOME/bash-docker-server
