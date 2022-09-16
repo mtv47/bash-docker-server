@@ -3,7 +3,7 @@ version: "3.7"
 services:
   whisparr:
     container_name: whisparr
-    image: cr.hotio.dev/hotio/whisparr
+    image: hotio/whisparr:nightly
     environment:
       - PUID=1000
       - PGID=1000
