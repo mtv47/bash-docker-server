@@ -81,15 +81,6 @@ sudo USED_DOCKER_DATA=$DOCKER_DATA USED_MUSIC_PATH=$MUSIC_PATH docker-compose up
 '
 
 echo "================================================================================"
-echo "Installing Papermerge"
-cd $PATH_TO_SCRIPTS/papermerge
-echo "================================================================================"
-echo "Please enter the path to your documents"
-read DOCUMENTS_PATH
-sudo USED_DOCKER_DATA=$DOCKER_DATA USED_DOCUMENTS_PATH=$DOCUMENTS_PATH docker-compose up -d
-
-
-echo "================================================================================"
 echo "Installing FreshRss"
 cd $PATH_TO_SCRIPTS/freshrss
 sudo USED_DOCKER_DATA=$DOCKER_DATA docker-compose up -d
