@@ -44,18 +44,6 @@ services:
     ports:
       - 6881:6881 # Port 6881 (torrent)
       - 6881:6881/udp # Port 6881 (torrent)
-  
-  #jackett:
-  #  image: lscr.io/linuxserver/jackett:latest
-  #  container_name: jackett
-  #  restart: unless-stopped
-  #  environment:
-  #    - PUID=1000
-  #    - PGID=1000
-  #    - TZ=Europe/Zurich
-  #  volumes:
-  #    - ${USED_DOCKER_DATA}/jackett/config:/config
-  #  # Port 9117 (web)
 
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:develop
